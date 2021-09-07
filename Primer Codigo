@@ -1,0 +1,18 @@
+const conexion = require('./cone_base_datos')
+var ciTemp = parseInt(prompt("Ingrese un numero de cedula"));
+//valida que sea numero de ceula ya que los numeros de cedula tienen 10 digitos
+if(ciTemp < 1000000000 && ciTemp > 999999999){
+    alert('Ingrese un numero de cedula valido');
+}else{
+    module.exports = app => {
+        const connect = conexion
+        app.post('/registro_datos', (req, res) => {
+            const correo = req.body.correo
+            connect.query('insert into cliente SET ?', {
+                correo
+            }, (error, resultado) => {
+                res.redirect('/factura')
+            })
+        })
+    }   
+}
