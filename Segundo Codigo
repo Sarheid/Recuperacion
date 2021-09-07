@@ -1,0 +1,10 @@
+function recorrido(){
+  num x = 0
+  for (let i = 1; i <= 100; i++) {
+    if(i%2 == 1){
+      num suma = i+x;
+      x = i
+    }
+ }
+ document.getElementById('suma').innerHTML='<h1>la suma de los numeros impares es: '+suma+'</h1>';
+}
